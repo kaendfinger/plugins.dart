@@ -51,8 +51,9 @@ void main(List<String> args, SendPort port) {
   rec.listen((Map<dynamic, dynamic> data) {
     print("Received data in plugin: ${data[0]}");
 
-    Map info = new Map();
-    info[0] = "Hello from plugin!";
+    var info = {
+      0: "Hello from plugin!"
+    };
     rec.send(info);
   });
 }
